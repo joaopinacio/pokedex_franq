@@ -1,16 +1,40 @@
-# pokedex_franq
+# Pokedex Franq
 
-A new Flutter project.
+# Commands
+## Build Runner
+```flutter packages pub run build_runner build --delete-conflicting-outputs```
+```flutter packages pub run build_runner watch --delete-conflicting-outputs```
 
-## Getting Started
+# Structure
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+├── lib
+│   ├── app
+│   │   ├── core
+│   │   │   ├── enums
+│   │   │   ├── injectable
+│   │   │   ├── routes
+│   │   │   ├── translate
+│   │   │   └── utils
+│   │   ├── feature
+│   │   │   └── {some_page}
+│   │   │       ├── data
+│   │   │       │   ├── datasource
+│   │   │       │   ├── model
+│   │   │       │   └── repository
+│   │   │       ├── domain
+│   │   │       │   ├── entity
+│   │   │       │   ├── repository
+│   │   │       │   └── usecase
+│   │   │       └── presenter
+│   │   │           ├── store
+│   │   │           └── pages
+│   │   └── layout
+│   │       ├── components
+│   │       └── themes
+│   │           ├── colors
+│   │           ├── icons
+│   │           └── images
+│   ├── main_dependencies.dart
+│   └── main.dart
+├── pubspec.lock
+└── pubspec.yaml
