@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class AppThemes {
   AppThemes._();
 
-  static const _fontFamily = 'Gibson';
+  static const _fontFamily = 'Poppins';
   static final _textStyle = TextStyle(
     color: colors.black,
     letterSpacing: 0,

@@ -4,6 +4,8 @@ class AppColors {
   Color get black => const Color(0xFF000000);
   Color get white => const Color(0xFFFFFFFF);
 
+  Color get splashBackground => const Color(0xFFF3FcFF);
+
   Color get primaryColor => const Color(0xFFF8D73A);
 
   Color get grayScale_1 => const Color(0xFF78848E);

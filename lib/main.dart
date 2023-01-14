@@ -1,10 +1,14 @@
 import 'dart:async';
 
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_analytics/observer.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:pokedex_franq/app/core/routes/app_module.dart';
 
 import 'app/app.dart';
 import 'app/core/injectable/injectable.dart';
@@ -35,7 +39,11 @@ void main() async {
       FlutterError.onError = firebaseCrashlytics.recordFlutterError;
     }
 
-    runApp(const MyApp());
+    Modular.setNavigatorKey(GlobalKey());
+    Modular.setObservers([FirebaseAnalyticsObserver(analytics: getIt<FirebaseAnalytics>())]);
+    Modular.setInitialRoute(AppModule.splash);
+
+    runApp(ModularApp(module: AppModule(), child: const MyApp()));
   }, (error, stackTrace) async {
     logger('App error: $error', stackTrace: stackTrace);
 

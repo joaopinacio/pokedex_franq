@@ -1,10 +1,6 @@
-import 'package:auto_route/auto_route.dart';
-import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
-import 'core/injectable/injectable.dart';
-import 'core/routes/app_router.dart';
-import 'core/routes/router_observer.dart';
 import 'layout/themes/app_themes.dart';
 
 class MyApp extends StatelessWidget {
@@ -15,17 +11,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       title: 'pokedex_franq',
       debugShowCheckedModeBanner: false,
-      routerDelegate: AutoRouterDelegate(
-        getIt<AppRouter>(),
-        navigatorObservers: () => [
-          AppRouteObserver(),
-          FirebaseAnalyticsObserver(analytics: getIt<FirebaseAnalytics>()),
-        ],
-      ),
-      routeInformationParser: getIt<AppRouter>().defaultRouteParser(),
-      // translations: TranslationService(),
-      // locale: TranslationService.locale,
-      // fallbackLocale: TranslationService.fallbackLocale,
+      routeInformationParser: Modular.routeInformationParser,
+      routerDelegate: Modular.routerDelegate,
       theme: AppThemes.light,
       darkTheme: AppThemes.dark,
       builder: (_, child) {
