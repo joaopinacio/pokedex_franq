@@ -9,6 +9,6 @@ class SplashBloc extends Cubit<bool> {
 
   void init() async {
     await Future.delayed(const Duration(seconds: 3));
-    Modular.to.navigate(AppModule.defaultP);
+    Modular.to.navigate(AppModule.home);
   }
 }

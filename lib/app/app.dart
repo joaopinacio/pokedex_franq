@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       routeInformationParser: Modular.routeInformationParser,
       routerDelegate: Modular.routerDelegate,
       theme: AppThemes.light,
-      darkTheme: AppThemes.dark,
+      // darkTheme: AppThemes.dark,
       builder: (_, child) {
         return MediaQuery(
           data: MediaQuery.of(_).copyWith(textScaleFactor: 1.0),

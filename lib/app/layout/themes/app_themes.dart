@@ -8,7 +8,7 @@ class AppThemes {
 
   static const _fontFamily = 'Poppins';
   static final _textStyle = TextStyle(
-    color: colors.black,
+    color: colors.primaryColor,
     letterSpacing: 0,
     fontFamily: _fontFamily,
   );
@@ -30,16 +30,21 @@ class AppThemes {
         brightness: Brightness.light,
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
-        scaffoldBackgroundColor: colors.white,
+        scaffoldBackgroundColor: colors.scaffoldBackground,
         textTheme: TextTheme(
-          bodyText1: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w400),
-          bodyText2: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w400),
+          bodyText1: _textStyle.copyWith(fontSize: 15, fontWeight: FontWeight.w400),
+          bodyText2: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w500),
           headline1: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w600),
           headline2: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w600),
           headline3: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w600),
           headline4: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w600),
-          headline5: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w700),
-          headline6: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w700),
+          headline5: _textStyle.copyWith(fontSize: 25, fontWeight: FontWeight.w700),
+          headline6: _textStyle.copyWith(fontSize: 30, fontWeight: FontWeight.w700),
+          subtitle1: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w700),
+          subtitle2: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w700),
+          caption: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w700),
+          button: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w700),
+          overline: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w700),
         ),
       );
 
