@@ -1,5 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:pokedex_franq/app/core/rest_client/rest_client.dart';
+import 'package:pokedex_franq/app/core/utils/app_utils.dart';
 import 'package:pokedex_franq/app/core/utils/logger.dart';
 
 import '../../../../core/error/default_exceptions.dart';
@@ -25,6 +26,7 @@ class PokemonDatasourceImpl extends PokemonDatasource {
       );
 
       final pokemon = PokemonModel.fromMap(result.data);
+      pokemon.color = await AppUtils.getDominantColorFromImage(pokemon.urlImage);
 
       return pokemon;
     } catch (e) {

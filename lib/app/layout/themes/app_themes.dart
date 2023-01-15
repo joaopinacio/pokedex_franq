@@ -24,7 +24,7 @@ class AppThemes {
 
   /// Light Theme
   static ThemeData get light => ThemeData(
-        useMaterial3: true,
+        // useMaterial3: true,
         // primarySwatch: Colors.orange,
         backgroundColor: colors.white,
         brightness: Brightness.light,
@@ -50,7 +50,7 @@ class AppThemes {
 
   /// Dark Theme
   static ThemeData get dark => ThemeData(
-        useMaterial3: true,
+        // useMaterial3: true,
         // primarySwatch: Colors.orange,
         backgroundColor: colors.black,
         brightness: Brightness.dark,

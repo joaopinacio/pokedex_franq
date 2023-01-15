@@ -1,5 +1,8 @@
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
+import 'package:pokedex_franq/app/core/utils/app_extensions.dart';
+
 import '../../domain/entity/pokemon_entity.dart';
 
 class PokemonModel extends PokemonEntity {
@@ -9,6 +12,7 @@ class PokemonModel extends PokemonEntity {
     required super.urlImage,
     required super.types,
     required super.moves,
+    required super.color,
   });
 
   static PokemonModel init() {
@@ -18,6 +22,7 @@ class PokemonModel extends PokemonEntity {
       urlImage: '',
       types: [],
       moves: [],
+      color: Colors.transparent,
     );
   }
 
@@ -28,6 +33,7 @@ class PokemonModel extends PokemonEntity {
       'urlImage': urlImage,
       'types': types,
       'moves': moves,
+      'color': color,
     };
   }
 
@@ -47,10 +53,11 @@ class PokemonModel extends PokemonEntity {
 
     return PokemonModel(
       id: map['id'] as int,
-      name: map['name'] as String,
+      name: (map['name'] as String).capitalize,
       urlImage: map['sprites']['other']['official-artwork']['front_default'] as String,
       types: typesList,
       moves: movesList,
+      color: Colors.transparent,
     );
   }
 

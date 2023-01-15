@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:pokedex_franq/app/feature/home/domain/entity/pokemon_entity.dart';
 
 import '../../domain/entity/pokemon_list_entity.dart';
@@ -18,9 +19,6 @@ class PokemonBloc extends Cubit<List<PokemonEntity>> {
           (r) => pokemonDetailedList.add(r),
         );
       });
-
-      // add()
-      // pokemonDetailedList.add(PokemonModel(name: pokemon.name));
     }
 
     addAll(pokemonDetailedList);

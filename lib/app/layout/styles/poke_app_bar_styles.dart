@@ -8,8 +8,11 @@ class PokeAppBarStyles {
   static AppBar onlyText({
     required BuildContext context,
     required String text,
+    Color? backgroundColor,
   }) =>
       AppBar(
+        elevation: 0,
+        backgroundColor: backgroundColor,
         titleSpacing: 20,
         title: AppTextStyles.h1(
           context: context,
