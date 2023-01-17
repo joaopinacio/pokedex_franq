@@ -25,8 +25,8 @@ class PokemonBloc extends Cubit<List<PokemonEntity>> {
   }
 
   void addAll(List<PokemonEntity> list) {
-    state.addAll(list);
+    final newList = List<PokemonEntity>.from(state)..addAll(list);
 
-    emit(state);
+    emit(newList);
   }
 }

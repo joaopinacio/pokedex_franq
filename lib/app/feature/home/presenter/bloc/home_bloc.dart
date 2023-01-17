@@ -1,6 +1,7 @@
 import 'package:pokedex_franq/app/core/bloc/bloc_cubit.dart';
 import 'package:pokedex_franq/app/feature/home/domain/usecase/pokemon_list_usecase.dart';
 import 'package:pokedex_franq/app/feature/home/presenter/bloc/pokemon_bloc.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../../../../core/bloc/bloc_state.dart';
 
@@ -15,21 +16,29 @@ class HomeBloc extends BlocCubit {
     init();
   }
 
+  RefreshController refreshController = RefreshController(initialRefresh: false);
+  var offsetPage = 0;
+
   void init() async {
-    emit(LoadingState());
-    await Future.delayed(const Duration(seconds: 2));
     getPokemons();
   }
 
-  void getPokemons() async {
-    _pokemonListUsecase().then((value) {
-      value.fold(
-        (l) => emit(FailureState()),
-        (r) async {
-          await _pokemonBloc.getPokemon(pokeList: r);
-          emit(SuccessState(true));
-        },
-      );
-    });
+  Future<void> getPokemons() async {
+    emit(LoadingState());
+
+    final result = await _pokemonListUsecase(offset: offsetPage);
+
+    if (result.isLeft()) {
+      emit(FailureState());
+    } else {
+      await _pokemonBloc.getPokemon(pokeList: result.getRight().toNullable()!);
+      emit(SuccessState(true));
+    }
+  }
+
+  void loadMore() async {
+    offsetPage += 20;
+    await getPokemons();
+    refreshController.loadComplete();
   }
 }

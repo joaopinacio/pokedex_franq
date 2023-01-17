@@ -9,7 +9,7 @@ import '../model/pokemon_model.dart';
 
 abstract class PokemonDatasource {
   Future<PokemonModel> getPokemonByUrl({required String url});
-  Future<List<PokemonListModel>> getPokemons();
+  Future<List<PokemonListModel>> getPokemons({int offset = 0});
 }
 
 @LazySingleton(as: PokemonDatasource)

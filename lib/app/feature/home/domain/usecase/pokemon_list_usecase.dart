@@ -6,7 +6,7 @@ import 'package:pokedex_franq/app/feature/home/domain/entity/pokemon_list_entity
 import '../repository/pokemon_repository.dart';
 
 abstract class PokemonListUsecase {
-  Future<Either<Failure, List<PokemonListEntity>>> call();
+  Future<Either<Failure, List<PokemonListEntity>>> call({int offset = 0});
 }
 
 @LazySingleton(as: PokemonListUsecase)
@@ -16,7 +16,7 @@ class PokemonListUsecaseImpl extends PokemonListUsecase {
   PokemonListUsecaseImpl(this._repository);
 
   @override
-  Future<Either<Failure, List<PokemonListEntity>>> call() async {
-    return await _repository();
+  Future<Either<Failure, List<PokemonListEntity>>> call({int offset = 0}) async {
+    return await _repository(offset: offset);
   }
 }

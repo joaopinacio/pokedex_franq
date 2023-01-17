@@ -8,6 +8,7 @@ import 'package:pokedex_franq/app/layout/components/app_pokemon_card_component.d
 import 'package:pokedex_franq/app/layout/styles/app_text_styles.dart';
 import 'package:pokedex_franq/app/layout/styles/poke_app_bar_styles.dart';
 import 'package:pokedex_franq/app/layout/themes/app_themes.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../../../../core/injectable/injectable.dart';
 import '../../domain/entity/pokemon_entity.dart';
@@ -71,27 +72,33 @@ class HomePage extends StatelessWidget {
                     }
 
                     return Expanded(
-                      child: GridView.builder(
-                        physics: const BouncingScrollPhysics(),
-                        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                          maxCrossAxisExtent: 200,
-                          childAspectRatio: 9 / 12,
-                          crossAxisSpacing: 20,
-                          mainAxisSpacing: 20,
+                      child: SmartRefresher(
+                        enablePullDown: false,
+                        enablePullUp: true,
+                        onLoading: BlocProvider.of<HomeBloc>(context).loadMore,
+                        controller: BlocProvider.of<HomeBloc>(context).refreshController,
+                        child: GridView.builder(
+                          physics: const BouncingScrollPhysics(),
+                          gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                            maxCrossAxisExtent: 200,
+                            childAspectRatio: 9 / 12,
+                            crossAxisSpacing: 20,
+                            mainAxisSpacing: 20,
+                          ),
+                          itemCount: state.length,
+                          itemBuilder: (builderContext, index) {
+                            final pokemon = state[index];
+                            return GestureDetector(
+                              onTap: () => Modular.to.pushNamed(AppModule.pokemonDetail, arguments: pokemon),
+                              child: AppPokemonCardComponent(
+                                id: pokemon.id.toString().putLeft,
+                                name: pokemon.name,
+                                url: pokemon.urlImage,
+                                backgroundColor: pokemon.color,
+                              ),
+                            );
+                          },
                         ),
-                        itemCount: state.length,
-                        itemBuilder: (builderContext, index) {
-                          final pokemon = state[index];
-                          return GestureDetector(
-                            onTap: () => Modular.to.pushNamed(AppModule.pokemonDetail, arguments: pokemon),
-                            child: AppPokemonCardComponent(
-                              id: pokemon.id.toString().putLeft,
-                              name: pokemon.name,
-                              url: pokemon.urlImage,
-                              backgroundColor: pokemon.color,
-                            ),
-                          );
-                        },
                       ),
                     );
                   },

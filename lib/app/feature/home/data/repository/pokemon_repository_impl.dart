@@ -16,9 +16,9 @@ class PokemonRepositoryImpl extends PokemonRepository {
   PokemonRepositoryImpl({required PokemonDatasource datasource}) : _datasource = datasource;
 
   @override
-  Future<Either<Failure, List<PokemonListEntity>>> call() async {
+  Future<Either<Failure, List<PokemonListEntity>>> call({int offset = 0}) async {
     try {
-      final List<PokemonListModel> pokemonListModel = await _datasource.getPokemons();
+      final List<PokemonListModel> pokemonListModel = await _datasource.getPokemons(offset: offset);
 
       return Right(pokemonListModel);
     } on DefaultException {
