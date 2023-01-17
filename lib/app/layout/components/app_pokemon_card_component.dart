@@ -30,10 +30,13 @@ class AppPokemonCardComponent extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          AppNetworkImageComponent(
-            width: imageSize ?? 120,
-            height: imageSize ?? 120,
-            url: url,
+          Hero(
+            tag: id,
+            child: AppNetworkImageComponent(
+              width: imageSize ?? 120,
+              height: imageSize ?? 120,
+              url: url,
+            ),
           ),
           const SizedBox(height: 20),
           AppTextStyles.bodyStrong(context: context, text: name),

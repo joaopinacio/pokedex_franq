@@ -67,9 +67,11 @@ class PokemonDetailPage extends StatelessWidget {
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(60),
-                        child: AppNetworkImageComponent(
-                          // boxFit: BoxFit.cover,
-                          url: state.urlImage,
+                        child: Hero(
+                          tag: state.id.toString(),
+                          child: AppNetworkImageComponent(
+                            url: state.urlImage,
+                          ),
                         ),
                       ),
                     ),
