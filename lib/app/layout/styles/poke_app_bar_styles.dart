@@ -18,5 +18,6 @@ class PokeAppBarStyles {
           context: context,
           text: text,
         ),
+        automaticallyImplyLeading: false,
       );
 }

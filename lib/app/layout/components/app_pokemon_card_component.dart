@@ -8,6 +8,7 @@ class AppPokemonCardComponent extends StatelessWidget {
   final String name;
   final String id;
   final Color backgroundColor;
+  final double? imageSize;
 
   const AppPokemonCardComponent({
     super.key,
@@ -15,6 +16,7 @@ class AppPokemonCardComponent extends StatelessWidget {
     required this.name,
     required this.id,
     required this.backgroundColor,
+    this.imageSize,
   });
 
   @override
@@ -29,8 +31,8 @@ class AppPokemonCardComponent extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           AppNetworkImageComponent(
-            width: 120,
-            height: 120,
+            width: imageSize ?? 120,
+            height: imageSize ?? 120,
             url: url,
           ),
           const SizedBox(height: 20),

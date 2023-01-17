@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:pokedex_franq/app/core/routes/app_module.dart';
 import 'package:pokedex_franq/app/core/utils/app_extensions.dart';
 import 'package:pokedex_franq/app/feature/home/presenter/bloc/home_bloc.dart';
 import 'package:pokedex_franq/app/layout/components/app_pokemon_card_component.dart';
@@ -80,11 +82,14 @@ class HomePage extends StatelessWidget {
                         itemCount: state.length,
                         itemBuilder: (builderContext, index) {
                           final pokemon = state[index];
-                          return AppPokemonCardComponent(
-                            id: pokemon.id.toString().putLeft,
-                            name: pokemon.name,
-                            url: pokemon.urlImage,
-                            backgroundColor: pokemon.color,
+                          return GestureDetector(
+                            onTap: () => Modular.to.pushNamed(AppModule.pokemonDetail, arguments: pokemon),
+                            child: AppPokemonCardComponent(
+                              id: pokemon.id.toString().putLeft,
+                              name: pokemon.name,
+                              url: pokemon.urlImage,
+                              backgroundColor: pokemon.color,
+                            ),
                           );
                         },
                       ),

@@ -3,10 +3,13 @@ import 'package:pokedex_franq/app/feature/default/presenter/pages/default_page.d
 import 'package:pokedex_franq/app/feature/home/presenter/pages/home_page.dart';
 import 'package:pokedex_franq/app/feature/splash/presenter/pages/splash_page.dart';
 
+import '../../feature/pokemon_detail/presenter/pages/pokemon_detail_page.dart';
+
 class AppModule extends Module {
   static const defaultP = '/default_page';
   static const splash = '/splash';
   static const home = '/home';
+  static const pokemonDetail = '/pokemon_detail';
 
   ChildRoute get defaultPage => ChildRoute(
         defaultP,
@@ -23,6 +26,11 @@ class AppModule extends Module {
         child: (context, args) => const HomePage(),
       );
 
+  ChildRoute get pokemonDetailPage => ChildRoute(
+        pokemonDetail,
+        child: (context, args) => const PokemonDetailPage(),
+      );
+
   @override
   List<Bind> get binds => [];
 
@@ -31,5 +39,6 @@ class AppModule extends Module {
         defaultPage,
         splashPage,
         homePage,
+        pokemonDetailPage,
       ];
 }
