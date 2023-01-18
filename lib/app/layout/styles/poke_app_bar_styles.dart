@@ -9,6 +9,7 @@ class PokeAppBarStyles {
     required BuildContext context,
     required String text,
     Color? backgroundColor,
+    Widget? trailing,
   }) =>
       AppBar(
         elevation: 0,
@@ -19,5 +20,6 @@ class PokeAppBarStyles {
           text: text,
         ),
         automaticallyImplyLeading: false,
+        actions: trailing != null ? [trailing, const SizedBox(width: 8)] : null,
       );
 }

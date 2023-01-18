@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:pokedex_franq/app/core/routes/app_module.dart';
+import 'package:pokedex_franq/app/core/theme/theme_bloc.dart';
 import 'package:pokedex_franq/app/core/utils/app_extensions.dart';
 import 'package:pokedex_franq/app/feature/home/presenter/bloc/home_bloc.dart';
 import 'package:pokedex_franq/app/layout/components/app_pokemon_card_component.dart';
@@ -32,13 +33,14 @@ class HomePage extends StatelessWidget {
             lazy: false,
           ),
         ],
-        // create: (BuildContext context) => HomeBloc(getIt.get()),
-        // lazy: false,
         child: Scaffold(
           appBar: PokeAppBarStyles.onlyText(
             context: context,
             text: 'Pokédex',
-            backgroundColor: AppThemes.colors.scaffoldBackground,
+            trailing: Switch(
+              value: BlocProvider.of<ThemeBloc>(context).state.isDark,
+              onChanged: BlocProvider.of<ThemeBloc>(context).fromSwitch,
+            ),
           ),
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -48,7 +50,9 @@ class HomePage extends StatelessWidget {
                 const SizedBox(height: 5),
                 AppTextStyles.body(
                   context: context,
-                  color: AppThemes.colors.primaryColor_60,
+                  color: BlocProvider.of<ThemeBloc>(context).state.isLight
+                      ? AppThemes.colors.primaryColor_60
+                      : AppThemes.colors.white,
                   text: 'Procure por um Pokemon e toque para ver seus detalhes',
                 ),
                 // const SizedBox(height: 20),
@@ -65,7 +69,7 @@ class HomePage extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 250),
                         child: Center(
                           child: CircularProgressIndicator(
-                            valueColor: AlwaysStoppedAnimation<Color>(AppThemes.colors.primaryColor),
+                            valueColor: AlwaysStoppedAnimation<Color>(Theme.of(context).iconTheme.color!),
                           ),
                         ),
                       );
@@ -90,6 +94,7 @@ class HomePage extends StatelessWidget {
                             final pokemon = state[index];
                             return GestureDetector(
                               onTap: () => Modular.to.pushNamed(AppModule.pokemonDetail, arguments: pokemon),
+                              // BlocProvider.of<ThemeBloc>(context).toDark(),
                               child: AppPokemonCardComponent(
                                 id: pokemon.id.toString().putLeft,
                                 name: pokemon.name,

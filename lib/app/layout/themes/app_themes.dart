@@ -26,6 +26,10 @@ class AppThemes {
   static ThemeData get light => ThemeData(
         // useMaterial3: true,
         // primarySwatch: Colors.orange,
+        iconTheme: IconThemeData(color: colors.primaryColor),
+        appBarTheme: AppBarTheme(
+          color: colors.white,
+        ),
         backgroundColor: colors.white,
         brightness: Brightness.light,
         splashColor: Colors.transparent,
@@ -52,20 +56,29 @@ class AppThemes {
   static ThemeData get dark => ThemeData(
         // useMaterial3: true,
         // primarySwatch: Colors.orange,
-        backgroundColor: colors.black,
+        iconTheme: IconThemeData(color: colors.white),
+        appBarTheme: AppBarTheme(
+          color: colors.primaryColor,
+        ),
+        backgroundColor: colors.primaryColor,
         brightness: Brightness.dark,
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
-        scaffoldBackgroundColor: colors.black,
+        scaffoldBackgroundColor: colors.primaryColor,
         textTheme: TextTheme(
-          bodyText1: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w400, color: colors.white),
-          bodyText2: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w400, color: colors.white),
-          headline1: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w600, color: colors.white),
+          bodyText1: _textStyle.copyWith(fontSize: 15, fontWeight: FontWeight.w400, color: colors.white),
+          bodyText2: _textStyle.copyWith(fontSize: 15, fontWeight: FontWeight.w500, color: colors.white),
+          headline1: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w500, color: colors.white),
           headline2: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w600, color: colors.white),
           headline3: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w600, color: colors.white),
           headline4: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w600, color: colors.white),
-          headline5: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w700, color: colors.white),
-          headline6: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w700, color: colors.white),
+          headline5: _textStyle.copyWith(fontSize: 25, fontWeight: FontWeight.w700, color: colors.white),
+          headline6: _textStyle.copyWith(fontSize: 30, fontWeight: FontWeight.w700, color: colors.white),
+          subtitle1: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w700, color: colors.white),
+          subtitle2: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w700, color: colors.white),
+          caption: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w700, color: colors.white),
+          button: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w700, color: colors.white),
+          overline: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w700, color: colors.white),
         ),
       );
 }

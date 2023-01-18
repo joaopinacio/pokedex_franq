@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pokedex_franq">
    <application
-        android:label="pokedex_franq"
-        android:name="Pokedex"
+        android:label="Pokedex"
+        android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import '../styles/app_text_styles.dart';
-import '../themes/app_themes.dart';
 
 class PokemonDetailAppBar extends StatelessWidget {
   final String name;
@@ -22,10 +21,9 @@ class PokemonDetailAppBar extends StatelessWidget {
         const SizedBox(width: 25),
         GestureDetector(
           onTap: () => Modular.to.pop(),
-          child: Icon(
+          child: const Icon(
             Icons.arrow_back_rounded,
             size: 30,
-            color: AppThemes.colors.black,
           ),
         ),
         Expanded(
