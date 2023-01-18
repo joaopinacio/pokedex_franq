@@ -33,8 +33,8 @@ class AppThemes {
         scaffoldBackgroundColor: colors.scaffoldBackground,
         textTheme: TextTheme(
           bodyText1: _textStyle.copyWith(fontSize: 15, fontWeight: FontWeight.w400),
-          bodyText2: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w500),
-          headline1: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w600),
+          bodyText2: _textStyle.copyWith(fontSize: 15, fontWeight: FontWeight.w500),
+          headline1: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w500),
           headline2: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w600),
           headline3: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w600),
           headline4: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w600),

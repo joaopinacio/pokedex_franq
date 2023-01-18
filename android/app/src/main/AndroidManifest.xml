@@ -2,7 +2,7 @@
     package="com.example.pokedex_franq">
    <application
         android:label="pokedex_franq"
-        android:name="${applicationName}"
+        android:name="Pokedex"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

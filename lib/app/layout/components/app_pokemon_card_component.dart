@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex_franq/app/core/utils/app_extensions.dart';
 
 import '../styles/app_text_styles.dart';
 import 'app_network_image_component.dart';
@@ -7,6 +8,7 @@ class AppPokemonCardComponent extends StatelessWidget {
   final String url;
   final String name;
   final String id;
+  final String type;
   final Color backgroundColor;
   final double? imageSize;
 
@@ -15,6 +17,7 @@ class AppPokemonCardComponent extends StatelessWidget {
     required this.url,
     required this.name,
     required this.id,
+    required this.type,
     required this.backgroundColor,
     this.imageSize,
   });
@@ -39,7 +42,8 @@ class AppPokemonCardComponent extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          AppTextStyles.bodyStrong(context: context, text: name),
+          AppTextStyles.headlineStrong(context: context, text: name),
+          AppTextStyles.bodyStrong(context: context, text: type.capitalize),
           AppTextStyles.body(context: context, text: id),
         ],
       ),

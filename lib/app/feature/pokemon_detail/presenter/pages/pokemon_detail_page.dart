@@ -5,6 +5,8 @@ import 'package:pokedex_franq/app/core/utils/app_extensions.dart';
 import 'package:pokedex_franq/app/layout/themes/app_themes.dart';
 
 import '../../../../layout/components/app_network_image_component.dart';
+import '../../../../layout/components/pokemon_detail_app_bar_component.dart';
+import '../../../../layout/components/pokemon_detail_image_component.dart';
 import '../../../../layout/styles/app_text_styles.dart';
 import '../../../home/domain/entity/pokemon_entity.dart';
 import '../bloc/pokemon_detail_bloc.dart';
@@ -26,55 +28,15 @@ class PokemonDetailPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: 60),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const SizedBox(width: 25),
-                      GestureDetector(
-                        onTap: () => Modular.to.pop(),
-                        child: Icon(
-                          Icons.arrow_back_rounded,
-                          size: 30,
-                          color: AppThemes.colors.black,
-                        ),
-                      ),
-                      Expanded(
-                        child: Column(
-                          children: [
-                            AppTextStyles.h1(
-                              context: context,
-                              text: state!.name,
-                            ),
-                            AppTextStyles.bodyStrong(
-                              context: context,
-                              text: state.id.toString().putLeft,
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(width: 50),
-                    ],
+                  PokemonDetailAppBar(
+                    name: state!.name,
+                    id: state.id.toString().putLeft,
                   ),
                   const SizedBox(height: 20),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25),
-                    child: Container(
-                      width: double.infinity,
-                      height: 350,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: state.color,
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(60),
-                        child: Hero(
-                          tag: state.id.toString(),
-                          child: AppNetworkImageComponent(
-                            url: state.urlImage,
-                          ),
-                        ),
-                      ),
-                    ),
+                  PokemonDetailImage(
+                    color: state.color,
+                    id: state.id.toString(),
+                    urlImage: state.urlImage,
                   ),
                   const SizedBox(height: 25),
                   TabBar(
@@ -82,11 +44,11 @@ class PokemonDetailPage extends StatelessWidget {
                     indicatorColor: AppThemes.colors.primaryColor,
                     labelPadding: const EdgeInsets.only(bottom: 6),
                     tabs: [
-                      AppTextStyles.bodyStrong(
+                      AppTextStyles.headlineStrong(
                         context: context,
                         text: 'Tipos',
                       ),
-                      AppTextStyles.bodyStrong(
+                      AppTextStyles.headlineStrong(
                         context: context,
                         text: 'Habilidades',
                       ),

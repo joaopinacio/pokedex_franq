@@ -56,4 +56,22 @@ class AppTextStyles {
               color: color,
             ),
       );
+
+  static Text headlineStrong({
+    required BuildContext context,
+    required String text,
+    Color? color,
+    int? maxLines,
+    TextOverflow? overflow,
+    TextAlign? textAlign,
+  }) =>
+      Text(
+        text,
+        maxLines: maxLines,
+        overflow: overflow,
+        textAlign: textAlign,
+        style: Theme.of(context).textTheme.headline1?.copyWith(
+              color: color,
+            ),
+      );
 }

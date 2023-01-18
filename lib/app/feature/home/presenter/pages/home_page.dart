@@ -95,6 +95,7 @@ class HomePage extends StatelessWidget {
                                 name: pokemon.name,
                                 url: pokemon.urlImage,
                                 backgroundColor: pokemon.color,
+                                type: pokemon.types[0],
                               ),
                             );
                           },
