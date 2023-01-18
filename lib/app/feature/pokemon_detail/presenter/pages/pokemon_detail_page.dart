@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:pokedex_franq/app/core/utils/app_extensions.dart';
 import 'package:pokedex_franq/app/layout/themes/app_themes.dart';
 
-import '../../../../layout/components/app_network_image_component.dart';
 import '../../../../layout/components/pokemon_detail_app_bar_component.dart';
 import '../../../../layout/components/pokemon_detail_image_component.dart';
 import '../../../../layout/styles/app_text_styles.dart';
