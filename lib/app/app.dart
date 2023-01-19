@@ -32,18 +32,6 @@ class MyApp extends StatelessWidget {
                 ),
               );
             },
-            // TODO: Fazer arquivo com gerenciamento de estado para mudar o Theme (Dark and White)
-            // themeMode: getThemeMode,
-            /* EXAMPLE
-            ThemeMode get getThemeMode {
-              switch (store.themeStore.state) {
-                case AppThemeType.dark:
-                  return ThemeMode.dark;
-                case AppThemeType.light:
-                  return ThemeMode.light;
-              }
-            }
-          */
           );
         },
       ),
