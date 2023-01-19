@@ -1,0 +1,31 @@
+name: Flutter CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+    - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+    - name: Check out repository code
+      uses: actions/checkout@v2
+    - run: echo "💡 The ${{ github.repository }}' repository has been cloned to the runner."
+    - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+    - uses: actions/setup-java@v1
+      with:
+        java-version: '12.x'
+    - name: Flutter action
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.3.10'
+        channel: 'stable'
+    - name: Install dependencies
+      run: flutter pub get
+    - name: Analyze
+      run: flutter analyze
+    - name: Run tests
+      run: flutter test
+    - name: Build_runner
+      run: flutter pub run build_runner build --delete-conflicting-outputs
+    - run: echo "🍏 This job's was called by ${{ github.actor }}."
