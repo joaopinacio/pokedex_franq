@@ -5,8 +5,8 @@ Foi feito o uso do Clean Architeture para a organização em camadas do projeto,
 seguindo sempre o SOLID para o design do código.
 
 # Dificuldades
-Por eu ter feito a escolha de ter feito um projeto bem estruturado 
-para demonstrar os conhecimentos que possuo tive pouco tempo
+Por eu ter feito a escolha de um projeto bem estruturado 
+para demonstrar os conhecimentos que possuo tive menos tempo
 para finalizar a versão aprimorada. (Comecei o projeto no dia 13 de Janeiro á noite)
 
 # Pacotes utilizados
@@ -28,34 +28,34 @@ para finalizar a versão aprimorada. (Comecei o projeto no dia 13 de Janeiro á 
 
 # Estrutura
 
-├── lib
-│   ├── app
-│   │   ├── core
-│   │   │   ├── enums
-│   │   │   ├── injectable
-│   │   │   ├── routes
-│   │   │   ├── translate
-│   │   │   └── utils
-│   │   ├── feature
-│   │   │   └── {some_page}
-│   │   │       ├── data
-│   │   │       │   ├── datasource
-│   │   │       │   ├── model
-│   │   │       │   └── repository
-│   │   │       ├── domain
-│   │   │       │   ├── entity
-│   │   │       │   ├── repository
-│   │   │       │   └── usecase
-│   │   │       └── presenter
-│   │   │           ├── store
-│   │   │           └── pages
-│   │   └── layout
-│   │       ├── components
-│   │       └── themes
-│   │           ├── colors
-│   │           ├── icons
-│   │           └── images
-│   ├── main_dependencies.dart
-│   └── main.dart
-├── pubspec.lock
-└── pubspec.yaml
+├── lib  
+│   ├── app  
+│   │   ├── core  
+│   │   │   ├── enums  
+│   │   │   ├── injectable  
+│   │   │   ├── routes  
+│   │   │   ├── translate  
+│   │   │   └── utils  
+│   │   ├── feature  
+│   │   │   └── {some_page}  
+│   │   │       ├── data  
+│   │   │       │   ├── datasource  
+│   │   │       │   ├── model  
+│   │   │       │   └── repository  
+│   │   │       ├── domain  
+│   │   │       │   ├── entity  
+│   │   │       │   ├── repository  
+│   │   │       │   └── usecase  
+│   │   │       └── presenter  
+│   │   │           ├── store  
+│   │   │           └── pages  
+│   │   └── layout  
+│   │       ├── components  
+│   │       └── themes  
+│   │           ├── colors  
+│   │           ├── icons  
+│   │           └── images  
+│   ├── main_dependencies.dart  
+│   └── main.dart  
+├── pubspec.lock  
+└── pubspec.yaml  
