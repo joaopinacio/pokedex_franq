@@ -11,10 +11,13 @@ para finalizar a versão aprimorada. (Comecei o projeto no dia 13 de Janeiro á 
 
 # Pacotes utilizados
 - Dio: Requisições HTTP
+- path: Facilitar uso de caminhos locais do device
 - fpdart: Utilização do Either
 - get_it: Injenção de Dependencia
+- sqflite: Banco de Dados local
 - injectable: Facilitar o uso do get_it
 - flutter_svg: Utilizar imagens em SVG
+- image_picker: Utilizado para pegar imagens do device do usuario
 - flutter_bloc: Gerenciamento de Estado
 - flutter_modular: Modular para facilitar a navegação
 - pull_to_refresh: Facilitar a implementação da lista infinita
