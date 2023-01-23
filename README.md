@@ -23,7 +23,7 @@ para finalizar a versão aprimorada. (Comecei o projeto no dia 13 de Janeiro á 
 
 # Comandos
 ## Build Runner
-```flutter packages pub run build_runner build --delete-conflicting-outputs```
+```flutter packages pub run build_runner build --delete-conflicting-outputs```  
 ```flutter packages pub run build_runner watch --delete-conflicting-outputs```
 
 # Estrutura
