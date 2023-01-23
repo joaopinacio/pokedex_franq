@@ -8,3 +8,13 @@ class DefaultError extends Failure {
   @override
   List<Object> get props => [];
 }
+
+class SqfliteError extends Failure {
+  @override
+  List<Object> get props => [];
+}
+
+class RequiredInputError extends Failure {
+  @override
+  List<Object> get props => [];
+}

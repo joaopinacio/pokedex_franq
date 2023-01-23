@@ -1,5 +1,5 @@
 class AppImages {
   static const String path = 'assets/images/';
 
-  String get test => '${path}test.png';
+  String get pokeball => '${path}pokeball_splash.gif';
 }

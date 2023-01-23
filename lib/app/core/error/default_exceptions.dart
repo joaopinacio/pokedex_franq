@@ -12,3 +12,7 @@ class DefaultException implements Exception {
   final String message;
   DefaultException(this.message);
 }
+
+class SqlfliteException implements Exception {
+  SqlfliteException();
+}

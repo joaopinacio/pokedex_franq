@@ -4,9 +4,11 @@ class AppColors {
   Color get black => const Color(0xFF000000);
   Color get white => const Color(0xFFFFFFFF);
 
-  Color get primaryColor => const Color(0xFFF8D73A);
+  Color get splashBackground => const Color(0xFFF3FcFF);
+  Color get scaffoldBackground => const Color(0xFFF5FBFB);
 
-  Color get grayScale_1 => const Color(0xFF78848E);
-  Color get grayScale_2 => const Color(0xFF989CA0);
-  Color get grayScale_3 => const Color(0xFF3f4448);
+  Color get primaryColor => const Color(0xFF2D2F56);
+  Color get primaryColor_60 => const Color(0xFF2D2F56).withOpacity(0.6);
+
+  Color get backgroundAddImage => const Color(0xFF222E35);
 }
