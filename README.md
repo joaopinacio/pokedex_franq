@@ -9,6 +9,11 @@ Por eu ter feito a escolha de um projeto bem estruturado
 para demonstrar os conhecimentos que possuo tive menos tempo
 para finalizar a versão aprimorada. (Comecei o projeto no dia 13 de Janeiro á noite)
 
+- Faltando implementar:  
+    - Update e Delete do Pokemon Custom
+    - Logs para contabilizar usando Analytics
+    - Tela de Login
+
 # Pacotes utilizados
 - Dio: Requisições HTTP
 - path: Facilitar uso de caminhos locais do device
