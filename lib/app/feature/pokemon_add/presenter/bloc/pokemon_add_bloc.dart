@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:pokedex_franq/app/core/error/default_errors.dart';
-import 'package:pokedex_franq/app/core/routes/app_module.dart';
 import 'package:pokedex_franq/app/core/utils/app_loading.dart';
 import 'package:pokedex_franq/app/core/utils/logger.dart';
 import 'package:pokedex_franq/app/feature/pokemon_add/data/model/pokemon_custom_model.dart';
