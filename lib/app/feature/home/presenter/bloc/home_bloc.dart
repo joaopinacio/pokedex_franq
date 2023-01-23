@@ -16,7 +16,7 @@ class HomeBloc extends BlocCubit {
     init();
   }
 
-  RefreshController refreshController = RefreshController(initialRefresh: false);
+  final RefreshController refreshController = RefreshController(initialRefresh: false);
   var offsetPage = 0;
 
   void init() async {

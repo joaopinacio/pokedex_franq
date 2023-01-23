@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:pokedex_franq/app/core/utils/app_extensions.dart';
 
@@ -11,6 +13,7 @@ class AppPokemonCardComponent extends StatelessWidget {
   final String type;
   final Color backgroundColor;
   final double? imageSize;
+  final bool isLocal;
 
   const AppPokemonCardComponent({
     super.key,
@@ -20,6 +23,7 @@ class AppPokemonCardComponent extends StatelessWidget {
     required this.type,
     required this.backgroundColor,
     this.imageSize,
+    this.isLocal = false,
   });
 
   @override
@@ -35,11 +39,17 @@ class AppPokemonCardComponent extends StatelessWidget {
         children: [
           Hero(
             tag: id,
-            child: AppNetworkImageComponent(
-              width: imageSize ?? 120,
-              height: imageSize ?? 120,
-              url: url,
-            ),
+            child: isLocal
+                ? Image.file(
+                    File(url),
+                    width: imageSize ?? 120,
+                    height: imageSize ?? 120,
+                  )
+                : AppNetworkImageComponent(
+                    width: imageSize ?? 120,
+                    height: imageSize ?? 120,
+                    url: url,
+                  ),
           ),
           const SizedBox(height: 20),
           AppTextStyles.headlineStrong(context: context, text: name),

@@ -11,6 +11,7 @@ import 'package:pokedex_franq/app/core/routes/app_module.dart';
 
 import 'app/app.dart';
 import 'app/core/injectable/injectable.dart';
+import 'app/core/sqflite/sqflite.dart';
 import 'app/core/utils/logger.dart';
 import 'firebase_options.dart';
 
@@ -18,7 +19,7 @@ void main() async {
   runZonedGuarded(() async {
     WidgetsFlutterBinding.ensureInitialized();
     await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-
+    configureDatabase();
     configureDependencies();
 
     await SystemChrome.setPreferredOrientations([

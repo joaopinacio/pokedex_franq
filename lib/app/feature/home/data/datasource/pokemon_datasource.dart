@@ -26,7 +26,7 @@ class PokemonDatasourceImpl extends PokemonDatasource {
       );
 
       final pokemon = PokemonModel.fromMap(result.data);
-      pokemon.color = await AppUtils.getDominantColorFromImage(pokemon.urlImage);
+      pokemon.color = await AppUtils.getDominantColorFromImage(url: pokemon.urlImage);
 
       return pokemon;
     } catch (e) {

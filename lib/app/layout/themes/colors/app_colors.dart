@@ -9,4 +9,6 @@ class AppColors {
 
   Color get primaryColor => const Color(0xFF2D2F56);
   Color get primaryColor_60 => const Color(0xFF2D2F56).withOpacity(0.6);
+
+  Color get backgroundAddImage => const Color(0xFF222E35);
 }

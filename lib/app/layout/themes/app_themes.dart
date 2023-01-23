@@ -26,9 +26,17 @@ class AppThemes {
   static ThemeData get light => ThemeData(
         // useMaterial3: true,
         // primarySwatch: Colors.orange,
+        buttonTheme: ButtonThemeData(
+          buttonColor: colors.primaryColor,
+        ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: colors.white,
+          foregroundColor: colors.primaryColor,
+        ),
         iconTheme: IconThemeData(color: colors.primaryColor),
         appBarTheme: AppBarTheme(
           color: colors.white,
+          foregroundColor: colors.primaryColor,
         ),
         backgroundColor: colors.white,
         brightness: Brightness.light,
@@ -41,7 +49,7 @@ class AppThemes {
           headline1: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w500),
           headline2: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w600),
           headline3: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w600),
-          headline4: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w600),
+          headline4: _textStyle.copyWith(fontSize: 20, fontWeight: FontWeight.w600),
           headline5: _textStyle.copyWith(fontSize: 25, fontWeight: FontWeight.w700),
           headline6: _textStyle.copyWith(fontSize: 30, fontWeight: FontWeight.w700),
           subtitle1: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w700),
@@ -56,9 +64,17 @@ class AppThemes {
   static ThemeData get dark => ThemeData(
         // useMaterial3: true,
         // primarySwatch: Colors.orange,
+        buttonTheme: ButtonThemeData(
+          buttonColor: colors.white,
+        ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: colors.primaryColor,
+          foregroundColor: colors.white,
+        ),
         iconTheme: IconThemeData(color: colors.white),
         appBarTheme: AppBarTheme(
           color: colors.primaryColor,
+          foregroundColor: colors.white,
         ),
         backgroundColor: colors.primaryColor,
         brightness: Brightness.dark,
@@ -71,7 +87,7 @@ class AppThemes {
           headline1: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w500, color: colors.white),
           headline2: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w600, color: colors.white),
           headline3: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w600, color: colors.white),
-          headline4: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w600, color: colors.white),
+          headline4: _textStyle.copyWith(fontSize: 20, fontWeight: FontWeight.w600, color: colors.white),
           headline5: _textStyle.copyWith(fontSize: 25, fontWeight: FontWeight.w700, color: colors.white),
           headline6: _textStyle.copyWith(fontSize: 30, fontWeight: FontWeight.w700, color: colors.white),
           subtitle1: _textStyle.copyWith(fontSize: 17, fontWeight: FontWeight.w700, color: colors.white),
